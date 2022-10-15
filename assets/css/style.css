@@ -14,6 +14,10 @@ textarea {
 }
 
 .jumbotron {
+  /*
+    * for whatever reason the .jumbotron class inherits 
+    * text align left from body when it loads into the browser
+    */
   text-align: center;
   background-color: transparent;
   color: black;
