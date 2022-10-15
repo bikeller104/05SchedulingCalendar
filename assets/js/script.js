@@ -1,8 +1,3 @@
-//make sure that the script is incorporated into the html correctly
-console.log("script has been imported correctly");
-
-//test that day.js was imported correctly
-console.log(dayjs()/*.get('year')*/);
 //get the first element with the class container
 /*
 *  TODO maybe make this a main element instead of div
@@ -10,13 +5,8 @@ console.log(dayjs()/*.get('year')*/);
 */
 var timeContainer = $(".container")[0];
 
-//got the correct container
-console.log(timeContainer);
-
-
-var header = $(".jumbotron");
-console.log(header);
-
+// var timeBody =$("body").children()[1];
+// console.log(timeBody);
 //get the current date element and add
 //the dayjs current date to it formatted correctly
 var curDay = $("#currentDay")
@@ -24,10 +14,10 @@ var curDay = $("#currentDay")
 curDay.text(getCurrentDate());
 
 
+createTimeSlotEl('9am').appendTo(timeContainer);
+ 
 
-
-
-
+//console.log(timeContainer);
 
 
 /*
@@ -42,6 +32,47 @@ https://day.js.org/docs/en/display/format
 function getCurrentDate()
 {
     var todaysDate = dayjs().format('dddd MMMM DD');
-    console.log($`todays date is {todaysDate}`);
+    //console.log($`todays date is {todaysDate}`);
     return todaysDate;
+}
+
+function createTimeSlotEl(time)
+{
+    var el = $('<p>');
+    el.text(time);
+    el.addClass("hour");
+    console.log(el);
+
+    var textArea = $("<textarea>");
+
+    var saveButton = $("<p>");
+    //saveButton.addClass(saveBtn);
+    saveButton.text("save")
+
+    var container = $("<div>");
+    container.addClass("row");
+    container.addClass("present");
+
+
+    container.append(el);
+    container.append(textArea);
+    container.append(saveButton);
+       
+    return container;
+    //return el;
+    // var timeSlot = $('div');
+    // timeSlot.addClass("row");
+    // var hour = $('p').text = time;
+    // //using text area instead of input allows
+    // //it to use the built in style for text area
+    // var textInput = $('textarea');
+
+    // var saveButton = ('div');
+    // saveButton.text('Save');
+
+}
+
+function handleSaveClick()
+{
+
 }
