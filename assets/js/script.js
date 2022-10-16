@@ -49,38 +49,38 @@ function getCurrentDate()
     return todaysDate;
 }
 
-function createTimeSlotEl(time)
-{
-    var el = $('<p>');
-    el.text(time);
-    el.addClass("hour");
-    console.log(el);
+// function createTimeSlotEl(time)
+// {
+//     var el = $('<p>');
+//     el.text(time);
+//     el.addClass("hour");
+//     console.log(el);
 
-    var textArea = $("<textarea>");
+//     var textArea = $("<textarea>");
 
-    var saveButton = $("<p>");
-    //saveButton.addClass(saveBtn);
-    saveButton.text("save")
+//     var saveButton = $("<p>");
+//     //saveButton.addClass(saveBtn);
+//     saveButton.text("save")
 
-    var container = $("<div>");
-    container.addClass("row");
-    container.addClass("present");
+//     var container = $("<div>");
+//     container.addClass("row");
+//     container.addClass("present");
 
 
-    container.append(el);
-    container.append(textArea);
-    container.append(saveButton);
+//     container.append(el);
+//     container.append(textArea);
+//     container.append(saveButton);
        
-    return container;
-    //return el;
-    // var timeSlot = $('div');
-    // timeSlot.addClass("row");
-    // var hour = $('p').text = time;
-    // //using text area instead of input allows
-    // //it to use the built in style for text area
-    // var textInput = $('textarea');
+//     return container;
+//     //return el;
+//     // var timeSlot = $('div');
+//     // timeSlot.addClass("row");
+//     // var hour = $('p').text = time;
+//     // //using text area instead of input allows
+//     // //it to use the built in style for text area
+//     // var textInput = $('textarea');
 
-    // var saveButton = ('div');
-    // saveButton.text('Save');
+//     // var saveButton = ('div');
+//     // saveButton.text('Save');
 
-}
+// }
