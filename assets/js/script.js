@@ -9,13 +9,26 @@ var timeContainer = $(".container")[0];
 // console.log(timeBody);
 //get the current date element and add
 //the dayjs current date to it formatted correctly
-var curDay = $("#currentDay")
+var curDay = $("#currentDay");
 //curDay.text("date goes here");
 curDay.text(getCurrentDate());
 
-
-createTimeSlotEl('9am').appendTo(timeContainer);
- 
+var today = dayjs().format("DD/MM/YYYY");
+console.log(today);
+for(let i = 9; i < 24; ++i)
+{
+        let time = dayjs().hour(i);
+        console.log(`${i}: ${time} `);
+        let timefrom = time.fromNow();
+        console.log(timefrom);
+        if(timefrom.includes('sec')) console.log("current time is now")
+        if(timefrom.includes('ago') ) console.log("time has past");
+        if(timefrom.includes('in')) console.log('time has yet to come');
+}
+    createTimeSlotEl('9 am').appendTo(timeContainer);
+    //timeContainer.on('click', handleSaveClick);
+    
+//this must go after adding all the elements to the time container
 
 //console.log(timeContainer);
 
@@ -69,10 +82,5 @@ function createTimeSlotEl(time)
 
     // var saveButton = ('div');
     // saveButton.text('Save');
-
-}
-
-function handleSaveClick()
-{
 
 }
